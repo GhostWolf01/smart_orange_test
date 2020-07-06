@@ -1,0 +1,88 @@
+.about-us{
+    padding: 120px 0;
+    &__quotes{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+    &__quote{
+        max-width:450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &-text{
+            color: #909090;
+            font-size: 15px;
+        }
+        &-title{
+            font-size: 38px;
+            text-transform: uppercase;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+        &-subtitle{
+            color: #af986f;
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding-left: 70px;
+            position: relative;
+            transition: all .5s;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 1px;
+                width: 60px;
+                background-color: #af986f;
+                top: calc(50% - .5px);
+                transition: all .5s;
+            }
+            &:hover{
+                padding-left: 35px;
+                transition: all .5s;
+                &:after{
+                width: 30px;
+                transition: all .5s;
+                }
+            }
+        }
+        &:first-child{
+            flex-direction: column-reverse;
+        }
+    }
+    &__info{
+        text-align: center;
+        &-title{
+            margin-bottom: 20px;
+        }
+        &-subtitle{
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        &-text{
+            margin-bottom: 40px;
+        }
+        &-items{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        &-item{
+            display: flex;
+            align-items: center;
+            text-align: left;
+            &-numb{
+                color: #af986f;
+                font-size: 60px;
+                margin-right: 10px;
+                span{
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+footer{
+  background: $black;
+  width: 100%;
+  color: $white;
+  min-height: 70px;
+  padding: 15px 0;
+}
+
+.footer_wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 500px){
+    flex-direction: column;
+    &--item:nth-child(2){
+      p{
+        font-size: 15px;
+      }
+    }
+  }
+
+}
