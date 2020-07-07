@@ -118,7 +118,8 @@ gulp.task("script", function () {
 			"node_modules/isotope-layout/dist/isotope.pkgd.js",
 			"node_modules/justifiedGallery/dist/js/jquery.justifiedGallery.js",
 			"node_modules/simple-parallax-js/dist/simpleParallax.js",
-			"node_modules/slick-carousel/slick/slick.js",	
+			"node_modules/slick-carousel/slick/slick.js",
+			"node_modules/progressbar.js/dist/progressbar.js"	
 			
 		])
 		.pipe(size())

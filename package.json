@@ -12,6 +12,7 @@
     "jquery": "^3.4.1",
     "justifiedGallery": "^3.8.1",
     "normalize.css": "^8.0.1",
+    "progressbar.js": "^1.1.0",
     "simple-parallax-js": "^5.5.1",
     "slick-carousel": "^1.8.1"
   },

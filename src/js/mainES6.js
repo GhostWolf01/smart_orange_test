@@ -1,32 +1,5 @@
 'use strict'
 
-let burger = document.querySelector('.burger'),
-    header = document.querySelector('header');
-
-burger.addEventListener('click', ()=> {
-  header.classList.toggle('header__active');
-});
-
-let blogImgParallx = document.querySelectorAll('.blog__item-image__link img');
-new simpleParallax (blogImgParallx, {
-  delay: 5,
-  scale: 1.5,
-	transition: 'cubic-bezier(0,0,0,1)'
-});
-
-let msnry = new Masonry('.portfolio__wrapper', {
-  itemSelector: '.portfolio__wrapper-item',
-  columnWidth: 95
-});
-
-let portfParallx = document.querySelectorAll('.portfolio__wrapper-item img');
-new simpleParallax (portfParallx, {
-  delay: 5,
-  scale: 1.2,
-	transition: 'cubic-bezier(0,0,0,1)'
-});
-
-
 /* ========= SHOW-SCROLL ========== */
 
 let showScrolActive=false;
@@ -97,3 +70,25 @@ AOS.init({
   mirror: true,
 });
 /* ========= Animation ==========*/
+/* =========Progress Bar ========= */
+let bar = new ProgressBar.Line(document.getElementsByClassName('slider__numb-progress')[0], {
+  color: '#DDDDDD',
+  duration: 5000,
+  strokeWidth: 100,
+  trailColor: '#DDDDDD',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'}
+});
+bar.animate(1.0, {} , function() {
+  $('.slider').slick('slickNext');
+});
+/* =========Progress Bar ========= */
+/* 
+let aboutImgParallx = document.getElementsByClassName('about-parallax__img');
+new simpleParallax (aboutImgParallx); */
+
+function servicesActive (e){
+  document.getElementsByClassName("services__item--active")[0].className = 'services__item aos-animate aos-init';
+  
+  e.srcElement.className +=" services__item--active";
+}
