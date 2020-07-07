@@ -1,86 +1,158 @@
-.about-us{
-    padding: 120px 0;
-    &__quotes{
+.gallery{
+    position: relative;
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    background-color:  #FDFBFB;
+    background-image: url('../../images/bg-gallery.png');
+    background-repeat: no-repeat;
+    background-size: 372.46px 457.73px;
+    background-position: 12px 222px;
+    &__nav{
+        position: absolute;
+        z-index: 5;
+        bottom: 0;
+        left: 0;
+        height: 100px;
+        width: 520px;
+        background: #FDFBFB;
+        box-shadow: 0px 5px 60px rgba(55, 55, 55, 0.2);
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 60px;
-    }
-    &__quote{
-        max-width:450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        &-text{
-            color: #909090;
-            font-size: 15px;
-        }
-        &-title{
-            font-size: 38px;
-            text-transform: uppercase;
-            line-height: 1.4;
-            font-weight: 700;
-        }
-        &-subtitle{
-            color: #af986f;
-            font-size: 16px;
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            padding-left: 70px;
-            position: relative;
-            transition: all .5s;
-            &:after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 0;
-                height: 1px;
-                width: 60px;
-                background-color: #af986f;
-                top: calc(50% - .5px);
-                transition: all .5s;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+        &-club{
+            &-home{
+                width: 320px;
+                height: 45px;
+                background: #F1F1F1;
+                border: none;
+                padding: 0;
+                padding-right: 75px;
+                text-align: right;
             }
-            &:hover{
-                padding-left: 35px;
-                transition: all .5s;
-                &:after{
-                width: 30px;
-                transition: all .5s;
+            &-rezedence{
+                width: 200px;
+                height: 45px;
+                border: none;
+                background: #F1F1F1;
+                padding: 0;
+                &__controls{
+                    display: none;
                 }
             }
+            &--active{
+                background: #FDFBFB;
+            }
         }
-        &:first-child{
-            flex-direction: column-reverse;
+        &-control{
+            &s{
+                height: 55px;
+                width: 100%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+            }
+            &-dots{
+                width: 320px;
+                height: 100%;
+                & ul{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    li {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 20px;
+                        width: 20px;
+                        button{
+                            padding: 0;
+                            font-size: 0;
+                            border-radius: 50%;
+                            background: #DDDDDD;
+                            border: none;
+                            width: 8px;
+                            height: 8px;
+                            cursor: pointer;
+                            transition: all 0.3s;
+                        }
+                    }
+                    & .slick-active{
+                        button{
+                            background: #A68E52;
+                        }
+                    }
+                }
+            }
+            &--left{
+                margin-left: 20px;
+                margin-right: 25px;
+            }
         }
     }
-    &__info{
-        text-align: center;
-        &-title{
-            margin-bottom: 20px;
+    &__slide{
+        &r{
+            padding-left: 235px;
+            height: 100%;
+            min-width: 0;
+            overflow: hidden;
         }
-        &-subtitle{
-            margin-bottom: 20px;
-            font-weight: 300;
+        width: 100%;
+        height: 100%;
+        &__for{
+            width: 100%;
+            height: 690px;
+            min-width: 0;
+            &-img{
+                width: 100%;
+                height: 690px;
+            }
         }
-        &-text{
-            margin-bottom: 40px;
-        }
-        &-items{
+        &__nav{
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+            min-width: 0;
+            margin-top: -40px;
+            margin-left: 305px;
             display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-        &-item{
-            display: flex;
-            align-items: center;
-            text-align: left;
-            &-numb{
-                color: #af986f;
-                font-size: 60px;
+            justify-content: start;
+            align-items: flex-end;
+            &-img{
                 margin-right: 10px;
-                span{
-                    font-size: 24px;
-                    font-weight: 600;
+                width: 120px;
+                height: 75px;
+                transition: all 0.1s linear;
+                &--active{
+                    width: 165px;
+                    height: 100px
+                }
+            }
+            & .slick-list{
+                height: 100%;
+                display: flex;
+                justify-content: start;
+                align-items: flex-end;
+            }
+            & .slick-track{
+                height: 100%;
+                display: flex;
+                justify-content: start;
+                align-items: flex-end;
+                transform: translate3d(0px, 0px, 0px)!important;
+            }
+            & .slick-slide{
+                display: flex;
+                justify-content: start;
+                align-items: flex-end;
+                & div{
+                    height: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: flex-end;
                 }
             }
         }
