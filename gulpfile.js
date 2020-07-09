@@ -17,7 +17,7 @@ let gulp = require("gulp"),
 	webp = require('gulp-webp'),
 	webphtml = require('gulp-webp-html'),
 	webpcss = require("gulp-webpcss"),
-	uglify = require("gulp-uglify"), //то же, что cssmin, только для js
+	uglify = require("gulp-uglify-es").default, //то же, что cssmin, только для js
 	concat = require("gulp-concat"), //склеивает css и js-файлы в один
 	del = require("del"), //удаляет указанные файлы и директории. Нужен для очистки перед билдом
 	ttf2woff = require("gulp-ttf2woff"), //конвертирует шрифты в веб-формат
@@ -114,8 +114,6 @@ gulp.task("script", function () {
 			"node_modules/@popperjs/core/dist/umd/popper.js",
 			"node_modules/slick-carousel/slick/slick.js",
 			"node_modules/progressbar.js/dist/progressbar.js",
-			"node_modules/google-maps/lib/esm/index.js"	
-			
 		])
 		.pipe(size())
 		.pipe(babel())
