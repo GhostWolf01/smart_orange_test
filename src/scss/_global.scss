@@ -269,18 +269,3 @@ h6 {
     transform: translate(19px, 0);
   }
 }
-/* ============ AOS custom ======== */
-[data-aos] {
-  @for $i from 60 through 400 {
-    body[data-aos-delay='#{$i * 50}'] &,
-    &[data-aos][data-aos-delay='#{$i * 50}'] {
-      transition-delay: 0s;
-
-      &.aos-animate {
-        transition-delay: #{$i * 50}ms;
-      }
-    }
-  }
-}
-
-/* ============ AOS custom ======== */

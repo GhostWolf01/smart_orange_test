@@ -96,8 +96,6 @@ gulp.task("style", function () {
 		.src([
 			//указываем, где брать исходники
 			"node_modules/normalize.css/normalize.css",
-			"node_modules/aos/dist/aos.css",
-			"node_modules/justifiedGallery/dist/css/justifiedGallery.css",
 			"node_modules/slick-carousel/slick/slick.css",
 		])
 		.pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
@@ -114,12 +112,9 @@ gulp.task("script", function () {
 			"node_modules/jquery/dist/jquery.js",
 			"node_modules/@fortawesome/fontawesome-free/js/all.js",
 			"node_modules/@popperjs/core/dist/umd/popper.js",
-			"node_modules/aos/dist/aos.js",
-			"node_modules/isotope-layout/dist/isotope.pkgd.js",
-			"node_modules/justifiedGallery/dist/js/jquery.justifiedGallery.js",
-			"node_modules/simple-parallax-js/dist/simpleParallax.js",
 			"node_modules/slick-carousel/slick/slick.js",
-			"node_modules/progressbar.js/dist/progressbar.js"	
+			"node_modules/progressbar.js/dist/progressbar.js",
+			"node_modules/google-maps/lib/esm/index.js"	
 			
 		])
 		.pipe(size())

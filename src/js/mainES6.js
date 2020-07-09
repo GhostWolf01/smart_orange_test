@@ -62,15 +62,7 @@ function scrollToUp(){
   }, timeItervalMS);
 }
 /* ========= SCROLL-UP ============*/
-/* ========= Animation ==========*/
-AOS.init({
-  offset: 0,
-  easing: 'linear',
-  once: true,
-  mirror: true,
-});
-/* ========= Animation ==========*/
-/* =========Progress Bar ========= */
+/* ========= Progress Bar ========= */
 let bar = new ProgressBar.Line(document.getElementsByClassName('slider__numb-progress')[0], {
   color: '#DDDDDD',
   duration: 5000,
@@ -82,13 +74,56 @@ let bar = new ProgressBar.Line(document.getElementsByClassName('slider__numb-pro
 bar.animate(1.0, {} , function() {
   $('.slider').slick('slickNext');
 });
-/* =========Progress Bar ========= */
-/* 
-let aboutImgParallx = document.getElementsByClassName('about-parallax__img');
-new simpleParallax (aboutImgParallx); */
+/* ========= Progress Bar ========= */
 
-function servicesActive (e){
-  document.getElementsByClassName("services__item--active")[0].className = 'services__item aos-animate aos-init';
-  
-  e.srcElement.className +=" services__item--active";
-}
+/* ========= Google Map ========= */
+let googleMapStyle = require("../js/mapStyle.json");
+let markerClub = require("../images/marker-club.png");
+let markerRezedence = require("../images/marker-rezedence.png");
+let markerOfiice = require("../images/marker-office.png");
+
+let map;
+let apiKey = "AIzaSyCuJQvEPFtEnnUeDksw0T1BFBW0KNL3DHM";
+let loaderOptions = {
+    language: 'ua', 
+    libraries: ['geometry', 'places', 'visualization']
+};
+let loader = new Loader( apiKey, loaderOptions);
+let options = {
+        zoom: 15,
+        center: { lat:50.476186, lng:30.669717},
+        styles: googleMapStyle,
+        mapTypeId: 'roadmap',
+        disableDefaultUI: true
+    };
+loader.load().then((google) => {
+  map = new google.maps.Map(document.getElementsByClass('office__map')[0], options);
+  new google.maps.Marker({
+    position: {
+      lat: 50.475858, 
+      lng: 30.669840
+    },
+    map: map,
+    title:"",
+    icon: markerClub,
+  });
+  new google.maps.Marker({
+    position: {
+      lat: 50.476472,  
+      lng: 30.669507,
+    },
+    map: map,
+    title:"",
+    icon: markerRezedence,
+  });
+  new google.maps.Marker({
+    position: {
+      lat: 50.476923, 
+      lng: 30.669260 
+    },
+    map: map,
+    title:"",
+    icon: markerOfiice,
+  });
+});
+/* ========= Google Map ========= */

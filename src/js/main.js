@@ -15,26 +15,6 @@ $(function () {
         $('.loading-text').addClass("isdone");
     });
     /* ===============================  Preloader page  =============================== */
-    /* ========= Animation Text =======*/
-    function animationTextFun(classSeach="animation-text", aosDelayDefault=0, aosOffset=-100, aosAnimation="fade-left"){
-       var animTextElements = document.getElementsByClassName(classSeach);
-        for( elem of animTextElements)
-        {
-            $(elem).splitText({'type':'lines'});
-            for(elemLine of elem.children)
-            {
-                $(elemLine).splitText({'type':'letters'});
-                $(elemLine.children).attr('data-aos', aosAnimation);
-                $(elemLine.children).attr('data-aos-offset', ''+aosOffset);
-                for(var i=0; i<elemLine.children.length;i++){
-                    $(elemLine.children[i]).attr('data-aos-delay', ''+(aosDelayDefault+50*i));
-                }
-            }
-        }
-    }
-    animationTextFun(); //default classSeach animation-text
-    animationTextFun("review__animation-text", 8000, 300);
-    /* ========= Animation Text =======*/
     /* ========= Slider ============= */
     /* ========== Home ========= */
     slickHead = $('.slider').slick({
@@ -63,10 +43,11 @@ $(function () {
 
     $('.form__close').click(function(){
         $('.form-phone').animate({
+            top: window.pageYOffset+document.documentElement.clientHeight*(-0.25)+'px',
             width: 0,
             height: 0,
             left: '50%'
-        }, 1000, function(){
+        }, 800, function(){
             $('.form-phone').css({
             'display': 'none'
             });
@@ -76,10 +57,11 @@ $(function () {
 
     $('.slide__phone-btn').click(function(){
         $('.form-phone').css({
-            'display': 'block',
-            'width': 0,
-            'height': 0,
-            'left': '50%'
+            top: '25%',
+            display: 'block',
+            width: 0,
+            height: 0,
+            left: '50%'
         });
         $('.form-phone').animate({
             width: '770px',
@@ -228,8 +210,8 @@ $(function () {
         arrows: false,
         infinite: false,
         autoplay: false,
-        swipe: false,
-        draggable: false,
+        swipe: true,
+        draggable: true,
     });
 
     $('.layouts__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -273,10 +255,11 @@ $(function () {
      
     $('.layouts__flat-contacts__btn').click(function(){
         $('.form-phone').css({
-            'display': 'block',
-            'width': 0,
-            'height': 0,
-            'left': '50%'
+            top: window.pageYOffset+document.documentElement.clientHeight*0.25+'px',
+            display : 'block',
+            width: 0,
+            height: 0,
+            left: '50%'
         });
         $('.form-phone').animate({
             width: '770px',
@@ -285,6 +268,21 @@ $(function () {
         }, 1000);
     });
     /* ========== Layouts ========= */
+
+    /* ========== Documets ========= */
+    $('.documents__slider').slick({
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        dots: true,
+        variableWidth: true,
+        appendDots: $('.documents__control-dots'),
+        arrows: true,
+        prevArrow: $('.documents__control--left'),
+        nextArrow: $('.documents__control--right'),
+        infinite: false,
+        autoplay: false,
+    });
+    /* ========== Documets ========= */
 
     /* ========= Slider ============= */
 });
