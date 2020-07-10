@@ -21,12 +21,12 @@ $(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-        dotsClass: "slider__dots",
+        appendDots: $('.slider__control-dots'),
         arrows: true,
         adaptiveHeight: true,
         infinite: true,
-        prevArrow: $('.slider-control--left'),
-        nextArrow: $('.slider-control--right'),
+        prevArrow: $('.slider__control--left'),
+        nextArrow: $('.slider__control--right'),
     });
 
     $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -93,25 +93,14 @@ $(function () {
         $('.gallery__nav-club-rezedence').addClass('gallery__nav-club--active');
         $('.gallery__nav-club-home').removeClass('gallery__nav-club--active');
     });
-
+    
     $('.gallery__club-home__for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         infinite: false,
-        accessibility: false,
+        accessibility: true,
         asNavFor: '.gallery__club-home__nav',
-    });
-
-    $('.gallery__club-home__nav').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        variableWidth: true,
-        infinite: false,
-        asNavFor: '.gallery__club-home__for',
-        arrows: false,
-        focusOnSelect: true,
-        accessibility: false,
     });
 
     $('.gallery__club-rezedence__for').slick({
@@ -119,7 +108,7 @@ $(function () {
         slidesToScroll: 1,
         arrows: false,
         infinite: false,
-        accessibility: false,
+        accessibility: true,
         asNavFor: '.gallery__club-rezedence__nav',
     });
 
@@ -131,8 +120,27 @@ $(function () {
         arrows: false,
         asNavFor: '.gallery__club-rezedence__for',
         focusOnSelect: true,
-        accessibility: false
+        accessibility: false,
+        useTransform: false,
     });
+
+    $('.gallery__club-home__nav').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        variableWidth: true,
+        infinite: false,
+        asNavFor: '.gallery__club-home__for',
+        arrows: false,
+        focusOnSelect: true,
+        accessibility: false,
+        useTransform: false,
+    });
+
+    if(window.matchMedia('(max-width: 768px)').matches){
+        $('.gallery__club-rezedence__nav').slick('slickSetOption', 'useTransform', true, true);
+        $('.gallery__club-home__nav').slick('slickSetOption', 'useTransform', true, true);
+    }
+    
 
     var gallery__control__dots = $('.gallery__nav-control-dots li');
     for(var i=0; i<gallery__control__dots.length; i++){
@@ -283,6 +291,55 @@ $(function () {
         autoplay: false,
     });
     /* ========== Documets ========= */
-
     /* ========= Slider ============= */
+    /* ========== Nav ===============*/
+    let elemArray = ["#review", "#gallery", "#layouts", "#documents", "#office" ];
+    let elemActive ="#review";
+    for (el of elemArray)
+    {
+        $(el).mouseenter(function(event){
+            elemActive='#'+event.currentTarget.id;
+            $('.nav a').removeClass('nav__link--active');
+            $('.nav a[href="'+elemActive+'"]').addClass('nav__link--active');
+        });
+    }
+    $('.nav__btn-up').click(function(){
+        for( let i=0;i < elemArray.length; i++)
+        {
+            if( elemArray[i]==elemActive)
+            {
+                if(i==0){
+                    break;
+                }
+                $('html, body').animate({
+                    scrollTop: $(elemArray[i-1]).offset().top  
+                }, 500);
+                $('.nav a').removeClass('nav__link--active');
+                $('.nav a[href="'+elemArray[i-1]+'"]').addClass('nav__link--active');
+                elemActive=elemArray[i-1];
+                break;
+            }
+        }
+        
+    });
+    $('.nav__btn-down').click(function(){
+        for( let i=0;i < elemArray.length; i++)
+        {
+            if( elemArray[i]==elemActive)
+            {
+                if(i==elemArray.length-1){
+                    break;
+                }
+                $('html, body').animate({
+                    scrollTop: $(elemArray[i+1]).offset().top  
+                }, 500);
+                $('.nav a').removeClass('nav__link--active');
+                $('.nav a[href="'+elemArray[i+1]+'"]').addClass('nav__link--active');
+                elemActive=elemArray[i+1];
+                break;
+            }
+        }
+    });
+    
+    /* ========== Nav ===============*/
 });

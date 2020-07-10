@@ -6,11 +6,8 @@
     background-color:  #FDFBFB;
     background-image: url('../../images/bg-gallery.png');
     background-repeat: no-repeat;
-    background-size: 372.46px 457.73px;
+    background-size: 31% 58.936%;
     background-position: 12px 222px;
-    &__club-rezedence__controls{
-        display: none;
-    }
     &__nav{
         position: absolute;
         z-index: 5;
@@ -33,19 +30,33 @@
                 padding: 0;
                 padding-right: 75px;
                 text-align: right;
+                font-family: HelveticaNeueCyr;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 10px;
+                line-height: 26px;
+                color: #212224;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
             }
             &-rezedence{
+                font-family: HelveticaNeueCyr;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 10px;
+                line-height: 26px;
+                color: #212224;
                 width: 200px;
                 height: 45px;
                 border: none;
                 background: #F1F1F1;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
                 padding: 0;
-                &__controls{
-                    display: none;
-                }
             }
             &--active{
                 background: #FDFBFB;
+                color: #A68E52;
             }
         }
         &-controls{
@@ -98,22 +109,28 @@
             }
         }
     }
+    &__slider{
+        padding-left: 235px;
+        height: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
     &__slide{
-        &r{
-            padding-left: 235px;
-            height: 100%;
-            min-width: 0;
-            overflow: hidden;
-        }
         width: 100%;
         height: 100%;
         &__for{
             width: 100%;
             height: 690px;
             min-width: 0;
-            &-img{
+            &-container{
                 width: 100%;
                 height: 690px;
+                min-width: 0;
+            }
+            &-img{
+                width:100%;
+                height: 100%;
+                object-fit: contain;
             }
         }
         &__nav{
@@ -147,7 +164,7 @@
                 display: flex;
                 justify-content: start;
                 align-items: flex-end;
-                transform: translate3d(0px, 0px, 0px)!important;
+                left: 0 !important;
             }
             & .slick-slide{
                 display: flex;
@@ -159,6 +176,97 @@
                     justify-content: start;
                     align-items: flex-end;
                 }
+            }
+        }
+    }
+}
+@media(max-width: 991px) {
+    
+}
+
+@media(max-width: 768px) {
+    .gallery{
+        background-size: 31% 58.936%;
+        background-position: 8px 222px;
+        height: max-content;
+        &__nav{
+            width: 100%;
+            &-club{
+                &-home{
+                    width: 50%;
+                }
+                &-rezedence{
+                    width: 50%;
+                    padding: 0 10px;
+                }
+            }
+            &-control{
+                &--left{
+                    margin-left: 5px;
+                    margin-right: 15px;
+                }
+                &-dots{
+                    width: 60%;
+                }
+            }
+        }
+        &__slider{
+            padding-left: 40px;
+        }
+        &__slide{
+            &__for{
+                height: max-content;
+                &-container{
+                    height: 620px;
+                }
+            }
+            &__nav{
+                margin-left: 0px;
+                margin-bottom: 110px;
+            }
+        }
+    }
+}
+
+@media(max-width:400px){
+    .gallery{
+        background-size: 31% 58.936%;
+        background-position: 8px 222px;
+        height: max-content;
+        &__nav{
+            width: 100%;
+            &-club{
+                &-home{
+                    width: 50%;
+                    padding: 0 20px;
+                }
+                &-rezedence{
+                    width: 50%;
+                    padding: 0 10px;
+                }
+            }
+            &-control{
+                &--left{
+                    margin-left: 5px;
+                    margin-right: 15px;
+                }
+                &-dots{
+                    width: 60%;
+                }
+            }
+        }
+        &__slider{
+            padding-left: 40px;
+        }
+        &__slide{
+            &__for{
+                height: max-content;
+                &-container{
+                    height: 200px;
+                }
+            }
+            &__nav{
+                margin: 20px 0 110px 0;
             }
         }
     }

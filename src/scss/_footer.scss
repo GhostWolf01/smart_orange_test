@@ -82,3 +82,38 @@
     }
   }
 }
+
+@media(max-width: 991px) {
+    
+}
+
+@media(max-width: 768px) {
+    .footer{
+      height: max-content;
+      flex-direction: column; 
+      justify-content: start;
+      &__logo{
+        &-developer{
+          margin-top: 10px;
+        }
+      }
+      &__addres{
+        margin-bottom: 10px;
+      }
+      &__phone{
+        margin-bottom: 20px;
+      }
+      &__social{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &__lang{
+        margin-top: 10px;
+      }
+    }
+}
+
+@media(max-width: 400px) {
+    
+}

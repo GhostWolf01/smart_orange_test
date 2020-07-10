@@ -23,7 +23,7 @@
 
 
 
-.slider-container {
+.slider__container {
     position: relative;
     height: 100%;
     user-select: none;
@@ -34,18 +34,17 @@
 .slider {
     position: relative;
     height: 100%;
-    color: #000 !important;
     display: flex;
     justify-content: start;
     align-items: flex-start;
     min-width: 0;
     & .slick-list{
-        height: 100%;
+        height: 100% !important;
         & .slick-track{
-            height: 100%;
+            height: 100% !important;
         }
         & .slick-slide>div{
-            height: 100%;
+            height: 100% !important;
         }
     }
     &__numb {
@@ -77,45 +76,50 @@
 
         }
     }
-    &-control{
+    &__controls{
         z-index: 6;
-        position: absolute;
-        left: 190px;
-        bottom: 125px;
-        cursor: pointer;
-        &--right{
-            left: 265px;
-        }
-    }
-    &__dots{
         position: absolute;
         left: 110px;
         bottom: 125px;
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
-        li {
+    }
+    &__control{
+        cursor: pointer;
+        &--left{
+            margin-right: 25px;
+        }
+        &-dots{
+            margin-right: 30px;
+            ul{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 20px;
-                width: 20px;
-                button{
-                    padding: 0;
-                    font-size: 0;
-                    border-radius: 50%;
-                    background: #DDDDDD;
-                    opacity: 0.2;
-                    border: none;
-                    width: 8px;
-                    height: 8px;
-                    cursor: pointer;
-                    transition: all 0.3s;
+                li {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 20px;
+                        width: 20px;
+                        button{
+                            padding: 0;
+                            font-size: 0;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            background: rgba($color: #DDDDDD, $alpha: 0.2) ;
+                            border: none;
+                            width: 8px;
+                            height: 8px;
+                            
+                            transition: all 0.3s;
+                        }
                 }
-        }
-        & .slick-active{
-            button{
-                background: #757575;
+                & .slick-active{
+                    button{
+                        background: #757575;
+                    }
+                }
             }
         }
     }
@@ -316,22 +320,7 @@
         width: 14px;
     }
 }
-@keyframes from-anim{
-    form {
-        width: 0;
-        height: 0;
-    }
-    to{
-        width: 770px;
-        height: 505px;
-    }
-}
-.form-anim-open{
-    animation: from-anim 1s linear forwards;
-}
-.form-anim-close{
-    animation: from-anim 1s linear reverse forwards;
-}
+
 .form{
     &-phone{
         display: none;
@@ -450,7 +439,9 @@
         
     }
 }
-
+.logo__club{
+    margin: -13px 0;
+}
 
 @media(max-width: 991px) {
     
@@ -461,5 +452,70 @@
 }
 
 @media(max-width:400px){
-    
+    .slider{
+        &__numb{
+            left: -20px;
+        }
+        &__controls{
+            left: 70px;
+            bottom: 75px;
+        }
+    }
+    .slide{
+        padding-top: 10px; 
+        &__header{
+            padding: 0 10px;
+        }
+        &__logo{
+            margin-right: 10px;
+        }
+        &__phone{
+            &-content{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            &-text{
+                font-size: 12px;
+            }
+            &-btn{
+                font-size: 10px;
+            }
+        }
+        &__text{
+            padding-left: 70px;
+            margin-top: 20px;
+            &-heading{
+                font-size: 10px;
+                line-height: 20px;
+            }
+            &-desc{
+                font-size: 48px;
+                line-height: 48px;
+            }
+        }
+        &__addres{
+            left:20px;
+            bottom: 15px;
+            &-text{
+                margin-right: 10px;
+                & p{
+                    margin-left: 10px;
+                    font-size: 8px;
+                    line-height: 20px;
+                }
+            }
+            &-metro{
+                & p{
+                    margin-left: 10px;
+                    font-size: 8px;
+                    line-height: 20px;
+                }
+            }
+        }
+        &__botom-logo{
+            bottom: 10px;
+            right: 10px;
+        }
+
+    }
 }

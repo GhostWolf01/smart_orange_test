@@ -12,7 +12,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
         padding-right: 85px;
         height: 100%;
         flex-shrink: 0;
@@ -148,4 +147,68 @@
         width: 70%;
         height: 435px;
     }
+}
+
+@media(max-width: 991px) {
+    
+}
+
+@media(max-width: 768px) {
+    .office{
+        height: max-content;
+        padding: 40px 0 0 60px;
+        &__header{
+            flex-direction: column;
+            justify-content: start;
+            align-items: flex-start;
+            padding-right: 10px;
+        }
+        &__title{
+            width: 100%;
+            margin-right: 0;
+            &-text{
+                font-size: 48px;
+                line-height: 48px;
+            }
+        }
+        &__addres{
+            height: max-content;
+            margin-right: 0;
+            &-title{
+                font-size: 10px;
+                line-height: 20px;
+            }
+            &-text{
+                font-size: 20px;
+                line-height: 48px;
+            }
+        }
+        &__phone{
+            height: max-content;
+            &-title{
+                font-size: 10px;
+                line-height: 20px;
+            }
+            &-tel{
+                font-size: 20px;
+                line-height: 48px;
+                margin-right: 10px;
+            }
+        }
+        &__container{
+            margin-top: 0;
+            flex-direction: column;
+            justify-content: start;
+        }
+        &__map{
+            margin-top: 20px;
+            margin-left: 0;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    
 }
