@@ -245,7 +245,7 @@ window.initMap = function() {
   },
   map: map,
   title:"",
-  icon: "../images/marker-club.png", 
+  icon: "images/marker-club.png", 
   });
   new google.maps.Marker({
   position: {
@@ -254,7 +254,7 @@ window.initMap = function() {
   },
   map: map,
   title:"",
-  icon: "../images/marker-rezedence.png", 
+  icon: "images/marker-rezedence.png", 
   });
   new google.maps.Marker({
   position: {
@@ -263,7 +263,7 @@ window.initMap = function() {
   },
   map: map,
   title:"",
-  icon:"../images/marker-office.png", 
+  icon:"images/marker-office.png", 
   });
 };
 
