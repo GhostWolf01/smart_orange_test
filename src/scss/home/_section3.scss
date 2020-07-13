@@ -437,8 +437,162 @@
     }
 }
 
-@media(max-width: 991px) {
-    
+@media(max-width: 1024px) {
+    .layouts-documents{
+        padding: 10px 10px 60px 30px;
+        height: max-content;
+    }
+    .layouts{
+        height: max-content;
+        &__title{
+            & h2{
+                font-size: 48px;
+                line-height: 48px;
+            }
+        }
+        &__container{
+            height: max-content;
+        }
+        &__nav{
+            height: 90px;
+            align-items: flex-start;
+            &-group{
+                width: 25%;
+                &__title{
+                    height: 45px;
+                    font-size: 8px;
+                    line-height: 20px;
+                    margin-bottom: auto;
+                }
+                &__element{
+                    height: 45px;
+                    font-size: 9px;
+                    line-height: 24px;
+                }
+                &--active{
+                    background-color: #FFFFFF;
+                    width: 100%;
+                    margin-right: -75%;
+                    margin-left: 0;
+                    flex-wrap: wrap;
+                    transition: all 0.7s;
+                    & .layouts__nav-group__title{
+                        color: #A68E52;
+                        width: 25%;
+                    }
+                    & .layouts__nav-group__elements{
+                        width: 100%;
+                        transition: all 0.7s;
+                    }
+                    & .layouts__nav-group__element{
+                        width: 20%;
+                        padding: 0 15px;
+                        transition: all 0.7s;
+                    }
+                }
+            }
+        }
+        &__content{
+            padding: 20px 10px 0 10px;
+            flex-direction: column;
+        }
+        &__flat{
+            padding: 0 10px 10px 10px;
+            align-items: center;
+            &-container{
+                height: max-content;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            &-content{
+                width: 100%;
+                justify-content: space-between;
+
+                &-block{
+                    flex-direction: column;
+                    justify-content: start;
+
+                }
+                &:nth-of-type(1){
+                    padding-right: 0;
+                    border-right: none;
+                    border-bottom: 0.5px solid #DDDDDD;
+                    padding-bottom: 20px;
+                }
+                &:nth-of-type(2){
+                    margin-top: 10px;
+                    padding-left: 0;
+                }
+            }
+            &-plan{
+                width: 90%;
+                margin-bottom: 10px;
+            }
+            &-contacts{
+                flex-direction: column;
+                &__text{
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+                &__phone{
+                    padding-left: 0;
+                    text-align: center;
+                    width: 100%
+                }
+            }
+        }
+        &__controls{
+            margin-top: 20px;
+            padding-left: 10px;
+            height: max-content;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &-arrow{
+                margin-bottom: 20px;
+            }
+        }
+        &__control{
+            &-dots{
+                margin-bottom: 20px;
+                margin-right: 0;
+                justify-content: center;
+            }
+        }
+    }
+    @for $i from 1 through 3{
+        .layouts__nav-group:nth-of-type(#{$i+1}){
+            .layouts__nav-group__elements{
+                margin-left: ($i+1)*-25%;
+                margin-top: 45px;
+            }
+        }
+    }
+    .documents{
+        margin-left: 0;
+        &__title{
+            h2{
+                font-size: 48px;
+                line-height: 48px;
+            }
+        }
+        &__container-text{
+            margin-bottom: 25px;
+        }
+        &__text{
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        &__slider{
+            padding-left: 40px;
+        }
+        &__controls{
+            justify-content: center;
+        }
+    }
 }
 
 @media(max-width: 768px) {

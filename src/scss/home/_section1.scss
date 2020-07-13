@@ -443,8 +443,73 @@
     margin: -13px 0;
 }
 
-@media(max-width: 991px) {
-    
+@media(max-width: 1024px) {
+    .slider{
+        &__numb{
+            left: -20px;
+        }
+        &__controls{
+            left: 70px;
+            bottom: 75px;
+        }
+    }
+    .slide{
+        padding-top: 10px; 
+        &__header{
+            padding: 0 10px;
+        }
+        &__logo{
+            margin-right: 10px;
+        }
+        &__phone{
+            &-content{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            &-text{
+                font-size: 12px;
+            }
+            &-btn{
+                font-size: 10px;
+            }
+        }
+        &__text{
+            padding-left: 70px;
+            margin-top: 20px;
+            &-heading{
+                font-size: 10px;
+                line-height: 20px;
+            }
+            &-desc{
+                font-size: 48px;
+                line-height: 48px;
+            }
+        }
+        &__addres{
+            left:20px;
+            bottom: 15px;
+            &-text{
+                margin-right: 10px;
+                & p{
+                    margin-left: 10px;
+                    font-size: 8px;
+                    line-height: 20px;
+                }
+            }
+            &-metro{
+                & p{
+                    margin-left: 10px;
+                    font-size: 8px;
+                    line-height: 20px;
+                }
+            }
+        }
+        &__botom-logo{
+            bottom: 10px;
+            right: 10px;
+        }
+
+    }
 }
 
 @media(max-width: 768px) {
